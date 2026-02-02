@@ -1,0 +1,32 @@
+🏆 Grand Exercice : Le Gestionnaire Météo
+Étape 1 : Création des données (NumPy)
+
+    Crée un tableau NumPy nommé temperatures contenant 100 nombres entiers aléatoires entre -10 et 45 degrés.
+
+    Crée un deuxième tableau nommé humidite contenant 100 nombres entre 20 et 100.
+
+Étape 2 : Organisation (Pandas)
+
+    Transforme ces deux tableaux en un seul DataFrame nommé df_meteo.
+
+    Nomme les colonnes : "Température" et "Humidité".
+
+Étape 3 : Inspection et Nettoyage
+
+    Affiche les 10 premières lignes pour vérifier le tableau.
+
+    Affiche les statistiques (describe) pour voir la température moyenne.
+
+    Nettoyage : Remplace toutes les températures négatives par 0 (car notre capteur imaginaire a gelé !).
+
+        Indice : df_meteo.loc[df_meteo["Température"] < 0, "Température"] = 0
+
+Étape 4 : Analyse Supérieure
+
+    Crée une nouvelle colonne "Alerte" : elle doit contenir la multiplication de la Température par l'Humidité (pour calculer un indice de chaleur).
+
+    Crée un nouveau tableau nommé df_canicule qui ne contient que les lignes où la Température est supérieure à 35 degrés.
+
+Étape 5 : Sauvegarde
+
+    Enregistre ton tableau final df_meteo dans un fichier nommé resultats_meteo.csv sans les index.

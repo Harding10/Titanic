@@ -1,0 +1,108 @@
+import sys
+
+# 1. Saisie des nombres
+nombre1 = input("Entrez un nombre entier: ")
+nombre2 = input("Entrez un nombre entier: ")
+
+# Vérification si les entrées sont des nombres
+if not nombre1.isnumeric() or not nombre2.isnumeric():
+    print("Erreur: les deux nombres doivent être des nombres entiers")
+    sys.exit()
+
+# Conversion en entiers
+nombre1 = int(nombre1)
+nombre2 = int(nombre2)
+
+# 2. Choix de l'opération
+operation = input("Entrez l'opération souhaitée ['+', '-', '*' ou '/']: ")
+
+# 3. Utilisation du Match Case pour le calcul
+match operation:
+    case "+":
+        resultat = nombre1 + nombre2
+        phrase = "La somme est"
+        
+    case "-":
+        resultat = nombre1 - nombre2
+        phrase = "La différence est"
+        
+    case "*":
+        resultat = nombre1 * nombre2
+        phrase = "Le produit est"
+        
+    case "/":
+        if nombre2 == 0:
+            print("Erreur: impossible de diviser par zéro.")
+            sys.exit()
+        resultat = round(nombre1 / nombre2, 2)
+        phrase = "Le quotient est"
+        
+    case _: # Cas par défaut si l'opération n'est pas reconnue
+        print("Erreur: symbole d'opération non valide.")
+        sys.exit()
+
+# 4. Affichage du résultat final
+print(f"--- Résultat ---")
+print(f"{phrase} : {resultat}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import sys
+
+# 1. Saisie et Conversion avec gestion d'erreur
+try:
+    nombre1 = int(input("Entrez un nombre entier: "))
+    nombre2 = int(input("Entrez un nombre entier: "))
+except ValueError:
+    print("Erreur: Vous devez entrer des nombres entiers valides.")
+    sys.exit()
+
+# 2. Choix de l'opération
+operation = input("Entrez l'opération souhaitée ['+', '-', '*' ou '/']: ")
+
+# 3. Calcul avec Match Case
+try:
+    match operation:
+        case "+":
+            resultat = nombre1 + nombre2
+            phrase = "La somme est"
+            
+        case "-":
+            resultat = nombre1 - nombre2
+            phrase = "La différence est"
+            
+        case "*":
+            resultat = nombre1 * nombre2
+            phrase = "Le produit est"
+            
+        case "/":
+            # Le try va attraper la division par zéro automatiquement via ZeroDivisionError
+            resultat = round(nombre1 / nombre2, 2)
+            phrase = "Le quotient est"
+            
+        case _:
+            print("Erreur: symbole d'opération non valide.")
+            sys.exit()
+
+except ZeroDivisionError:
+    print("Erreur: Impossible de diviser par zéro.")
+    sys.exit()
+
+# 4. Affichage du résultat
+print(f"--- Résultat ---")
+print(f"{phrase} : {resultat}")
