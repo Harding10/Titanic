@@ -2,6 +2,13 @@
 
 Analyse de données visant à comprendre **quels facteurs ont influencé la survie des passagers du Titanic** à partir du jeu de données classique de Kaggle.
 
+
+![alt text](font.png)
+
+
+
+
+
 ---
 
 ## 📌 Objectif du projet
@@ -49,6 +56,7 @@ Ces choix permettent de conserver un maximum de données exploitables.
 ### 🏷️ Classe sociale
 - Classe 1 : **62 %** de survie
 - Classe 3 : **24 %** de survie
+
 
 👉 La classe sociale est l’un des facteurs les plus déterminants de la survie.
 
